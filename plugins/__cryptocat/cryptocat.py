@@ -6,6 +6,7 @@ def get_bitcoin(tool_input, cat):
     """Retrieves the current price of bitcoin in USD. Use it whenever needed to know the current price of bitcoin. Never get this information from long term memory. Input is always None."""
     r = requests.get("https://api.blockchain.com/v3/exchange/tickers/BTC-USD")
     p = r.json()["last_trade_price"]
+    return f"${p}"
 
 @tool
 def get_ethereum(tool_input, cat):
